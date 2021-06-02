@@ -1,0 +1,311 @@
+.grayishblue{
+    color: #9698a6;
+}
+.lightgrayishblue{
+    color: #f3f4f6;
+}
+.biru{
+    color: #3662DD;
+}
+.abu{
+    color: #EFEAE8;
+}
+* {
+box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.3;
+    color: #6e6e74;
+}
+
+main{
+    overflow: auto;
+}
+
+.noscroll{
+    overflow: hidden;
+}
+
+.container{
+    /* padding: 1.0625rem 1.5rem; */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.header{
+    background-color: #EFEAE8;
+    /* top: 0;
+display: block;
+position: sticky; */
+}
+
+nav{
+    /* padding: 1.0625rem 1.5rem; */
+    padding-top: 1.0625rem;
+    padding-bottom: 1.0625rem;
+    position: relative;
+    background: #EFEAE8;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger span{
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: #3662DD;
+    transition: all 300ms ease-in-out;
+    transform-origin: 3px 1px;;
+}
+.hamburger span:not(:last-child){
+    margin-bottom: 5px;
+}
+
+.open span:first-child{
+    transform: rotate(45deg);
+}
+
+.open span:nth-child(2){
+ opacity: 0;
+}
+
+.open span:last-child{
+    transform: rotate(-45deg);
+}
+
+.links a:not(:last-child){
+    margin-right: 1.25rem;
+}
+
+.links a:hover{
+    transition: color 300ms ease-in-out;
+    /* font-weight: 700; */
+    color: #3662DD;
+}
+
+.links a:hover::before{
+    /* background: #3662DD; */
+    opacity: 1;
+}
+.links a{
+    color: #9698a6;
+    position: relative;
+    font-size: 0.875rem; 
+}
+
+.links a, .dropmenu a{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.links a::before{
+    content: "";
+    position: absolute;
+    display: block;
+    background: #3662DD;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    height: 5px;
+    border-radius: 3.135rem;
+    left: 0;
+    right: 0;
+    bottom: -22px;
+    
+}
+
+.logo img{
+    width: 1.875rem;
+    display: none;
+}
+
+.logo img, .profile img, .geni img{
+    filter: invert(33%) sepia(86%) saturate(1258%) hue-rotate(206deg) brightness(88%) contrast(97%);
+}
+
+.overlay{
+    /* display: none; */
+    opacity: 0;
+    position: fixed;
+    /* top: 4.0625rem; */
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(#3662DD, transparent);
+    animation: fade-out 300ms ease-in-out forwards;
+}
+
+.open .overlay {
+    animation: fade-in 300ms ease-in-out forwards;
+    opacity: 1;
+    display: block;
+}
+
+.dropmenu{
+    background-color: #EFEAE8;
+    padding: 1.625rem;
+    /* margin: 0px 1.5rem 0px 1.5rem; */
+    margin-top: 1.5rem;
+    position: absolute;
+    width: calc(100% - 3rem);
+    border-radius: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* animation: ; */
+}
+
+.dropmenu a{
+    color: #3662DD;
+    padding: 0.625rem;
+    display: block;
+    text-align: center;
+}
+
+.visible{
+    visibility: hidden;
+}
+
+/* konten */
+.content#hm{
+    padding: 1.5rem;
+    height: 95vh;
+    background-image: linear-gradient(#EFEAE8, transparent);
+}
+
+.content#abt{
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    float: left;
+    width: 70%;
+}
+
+.geni{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.geni p{
+    font-size: 55px;
+    font-weight: 700;
+}
+
+.geni p span{
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* aside */
+
+aside{
+    float: right;
+    width: 30%;
+    padding: 1.5rem;
+}
+
+.profile img{
+    position: relative;
+    margin: 30px auto;
+    width: 200px;
+    height: 200px;
+    display: block;
+    padding: 20px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+}
+
+.nama{
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: 700;
+}
+
+.tentang .kalimat{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* footer */
+footer{
+    padding: 5px;
+    color: #EFEAE8;
+    background-color: #3662DD;
+    text-align: center;
+    font-weight: 400;
+
+}
+
+@media (min-width: 769px) {
+    /* desktop */
+    .hamburger{
+        display: none;
+    }
+
+    nav{
+        padding: 1.0625rem 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* mobile */
+    .logo img{
+        width: 1.875rem;
+        display: block;
+    }
+
+    .links{
+        display: none;
+    }
+
+    .geni img{
+        display: none;
+    }
+
+    .content#abt{
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    aside{
+        width: 100%;
+    }
+}
+
+@keyframes fade-in{
+    from{
+        visibility: hidden;
+        opacity: 0;
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from{
+        visibility: visible;
+        opacity: 1;
+    }
+    to{
+        visibility: hidden;
+        opacity: 0;
+    }
+}
